@@ -1,7 +1,6 @@
 package com.aurum.springbootinit.controller;
 
 import cn.hutool.json.JSONUtil;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.aurum.springbootinit.annotation.AuthCheck;
 import com.aurum.springbootinit.common.BaseResponse;
 import com.aurum.springbootinit.common.DeleteRequest;
@@ -19,6 +18,7 @@ import com.aurum.springbootinit.model.entity.User;
 import com.aurum.springbootinit.model.vo.PostVO;
 import com.aurum.springbootinit.service.PostService;
 import com.aurum.springbootinit.service.UserService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,6 @@ import java.util.List;
 
 /**
  * 帖子接口
- *
  */
 @RestController
 @RequestMapping("/post")
@@ -141,7 +140,8 @@ public class PostController {
         if (post == null) {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
         }
-        return ResultUtils.success(postService.getPostVO(post, request));
+//        return ResultUtils.success(postService.getPostVO(post, request));
+        return null;
     }
 
     /**
@@ -169,14 +169,15 @@ public class PostController {
      */
     @PostMapping("/list/page/vo")
     public BaseResponse<Page<PostVO>> listPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
-            HttpServletRequest request) {
+                                                       HttpServletRequest request) {
         long current = postQueryRequest.getCurrent();
         long size = postQueryRequest.getPageSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.page(new Page<>(current, size),
                 postService.getQueryWrapper(postQueryRequest));
-        return ResultUtils.success(postService.getPostVOPage(postPage, request));
+//        return ResultUtils.success(postService.getPostVOPage(postPage, request));
+        return null;
     }
 
     /**
@@ -188,7 +189,7 @@ public class PostController {
      */
     @PostMapping("/my/list/page/vo")
     public BaseResponse<Page<PostVO>> listMyPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
-            HttpServletRequest request) {
+                                                         HttpServletRequest request) {
         if (postQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -200,7 +201,8 @@ public class PostController {
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.page(new Page<>(current, size),
                 postService.getQueryWrapper(postQueryRequest));
-        return ResultUtils.success(postService.getPostVOPage(postPage, request));
+//        return ResultUtils.success(postService.getPostVOPage(postPage, request));
+        return null;
     }
 
     // endregion
@@ -214,12 +216,13 @@ public class PostController {
      */
     @PostMapping("/search/page/vo")
     public BaseResponse<Page<PostVO>> searchPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
-            HttpServletRequest request) {
+                                                         HttpServletRequest request) {
         long size = postQueryRequest.getPageSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.searchFromEs(postQueryRequest);
-        return ResultUtils.success(postService.getPostVOPage(postPage, request));
+//        return ResultUtils.success(postService.getPostVOPage(postPage, request));
+        return null;
     }
 
     /**

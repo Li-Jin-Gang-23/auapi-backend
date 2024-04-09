@@ -49,7 +49,7 @@ public class UserInterfaceInfoController {
      */
     @PostMapping("/add")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
-    public BaseResponse<Long> addInterfaceInfo(@RequestBody UserInterfaceInfoAddRequest userInterfaceInfoAddRequest, HttpServletRequest request) {
+    public BaseResponse<Long> addUserInterfaceInfo(@RequestBody UserInterfaceInfoAddRequest userInterfaceInfoAddRequest, HttpServletRequest request) {
         if (userInterfaceInfoAddRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -68,7 +68,7 @@ public class UserInterfaceInfoController {
      * 删除
      */
     @PostMapping("/delete")
-    public BaseResponse<Boolean> deleteInterfaceInfo(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
+    public BaseResponse<Boolean> deleteUserInterfaceInfo(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
         if (deleteRequest == null || deleteRequest.getId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -90,7 +90,7 @@ public class UserInterfaceInfoController {
      */
     @PostMapping("/update")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
-    public BaseResponse<Boolean> updateInterfaceInfo(@RequestBody UserInterfaceInfoUpdateRequest userInterfaceInfoUpdateRequest, HttpServletRequest request) {
+    public BaseResponse<Boolean> updateUserInterfaceInfo(@RequestBody UserInterfaceInfoUpdateRequest userInterfaceInfoUpdateRequest, HttpServletRequest request) {
         if (userInterfaceInfoUpdateRequest == null || userInterfaceInfoUpdateRequest.getId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -117,7 +117,7 @@ public class UserInterfaceInfoController {
      */
     @GetMapping("/get")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
-    public BaseResponse<UserInterfaceInfo> getInterfaceInfoById(long id) {
+    public BaseResponse<UserInterfaceInfo> getUserInterfaceInfoById(long id) {
         if (id <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -133,7 +133,7 @@ public class UserInterfaceInfoController {
      */
     @GetMapping("/list")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
-    public BaseResponse<List<UserInterfaceInfo>> listInterfaceInfo(@RequestBody UserInterfaceInfoQueryRequest userInterfaceInfoQueryRequest) {
+    public BaseResponse<List<UserInterfaceInfo>> listUserInterfaceInfo(@RequestBody UserInterfaceInfoQueryRequest userInterfaceInfoQueryRequest) {
         UserInterfaceInfo userInterfaceInfoQuery = new UserInterfaceInfo();
         if (userInterfaceInfoQueryRequest != null) {
             BeanUtils.copyProperties(userInterfaceInfoQueryRequest, userInterfaceInfoQuery);
@@ -149,7 +149,7 @@ public class UserInterfaceInfoController {
      */
     @GetMapping("/list/page")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
-    public BaseResponse<Page<UserInterfaceInfo>> listInterfaceInfoByPage(UserInterfaceInfoQueryRequest userInterfaceInfoQueryRequest) {
+    public BaseResponse<Page<UserInterfaceInfo>> listUserInterfaceInfoByPage(UserInterfaceInfoQueryRequest userInterfaceInfoQueryRequest) {
         if (userInterfaceInfoQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
