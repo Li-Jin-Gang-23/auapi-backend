@@ -1,4 +1,4 @@
-package com.aurum.springbootinit.model.entity;
+package com.aurum.auapicommon.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

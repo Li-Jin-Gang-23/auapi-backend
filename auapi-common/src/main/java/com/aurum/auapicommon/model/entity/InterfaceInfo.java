@@ -1,7 +1,6 @@
-package com.aurum.springbootinit.model.entity;
+package com.aurum.auapicommon.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -62,12 +61,10 @@ public class InterfaceInfo implements Serializable {
     /**
      * 创建时间
      */
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**
      * 更新时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     /**
      * 是否删除(0-未删, 1-已删)
