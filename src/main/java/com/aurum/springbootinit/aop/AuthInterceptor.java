@@ -1,13 +1,11 @@
 package com.aurum.springbootinit.aop;
 
+import com.aurum.auapicommon.model.entity.User;
 import com.aurum.springbootinit.annotation.AuthCheck;
 import com.aurum.springbootinit.common.ErrorCode;
 import com.aurum.springbootinit.exception.BusinessException;
-import com.aurum.springbootinit.model.entity.User;
 import com.aurum.springbootinit.model.enums.UserRoleEnum;
 import com.aurum.springbootinit.service.UserService;
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -17,9 +15,11 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 权限校验 AOP
- *
  **/
 @Aspect
 @Component

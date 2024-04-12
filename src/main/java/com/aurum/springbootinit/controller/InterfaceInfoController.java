@@ -1,6 +1,8 @@
 package com.aurum.springbootinit.controller;
 
 import com.aurum.auapiclientsdk.client.AuApiClient;
+import com.aurum.auapicommon.model.entity.InterfaceInfo;
+import com.aurum.auapicommon.model.entity.User;
 import com.aurum.springbootinit.annotation.AuthCheck;
 import com.aurum.springbootinit.common.*;
 import com.aurum.springbootinit.constant.CommonConstant;
@@ -11,8 +13,6 @@ import com.aurum.springbootinit.model.dto.interfaceInfo.InterfaceInfoAddRequest;
 import com.aurum.springbootinit.model.dto.interfaceInfo.InterfaceInfoInvokeRequest;
 import com.aurum.springbootinit.model.dto.interfaceInfo.InterfaceInfoQueryRequest;
 import com.aurum.springbootinit.model.dto.interfaceInfo.InterfaceInfoUpdateRequest;
-import com.aurum.springbootinit.model.entity.InterfaceInfo;
-import com.aurum.springbootinit.model.entity.User;
 import com.aurum.springbootinit.model.enums.InterfaceInfoStatusEnum;
 import com.aurum.springbootinit.service.InterfaceInfoService;
 import com.aurum.springbootinit.service.UserService;

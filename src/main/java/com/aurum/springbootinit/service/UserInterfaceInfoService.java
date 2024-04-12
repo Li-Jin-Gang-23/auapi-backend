@@ -1,16 +1,17 @@
 package com.aurum.springbootinit.service;
 
-import com.aurum.springbootinit.model.entity.UserInterfaceInfo;
+import com.aurum.auapicommon.model.entity.UserInterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * 针对表【user_interface_info(用户调用接口关系)】的数据库操作Service
+ * 用户接口信息服务
  */
 public interface UserInterfaceInfoService extends IService<UserInterfaceInfo> {
+
     void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add);
 
     /**
-     * 接口调用统计
+     * 调用接口统计
      */
     boolean invokeCount(long interfaceInfoId, long userId);
 }

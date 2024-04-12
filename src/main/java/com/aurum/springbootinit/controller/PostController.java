@@ -1,6 +1,7 @@
 package com.aurum.springbootinit.controller;
 
 import cn.hutool.json.JSONUtil;
+import com.aurum.auapicommon.model.entity.User;
 import com.aurum.springbootinit.annotation.AuthCheck;
 import com.aurum.springbootinit.common.BaseResponse;
 import com.aurum.springbootinit.common.DeleteRequest;
@@ -14,7 +15,6 @@ import com.aurum.springbootinit.model.dto.post.PostEditRequest;
 import com.aurum.springbootinit.model.dto.post.PostQueryRequest;
 import com.aurum.springbootinit.model.dto.post.PostUpdateRequest;
 import com.aurum.springbootinit.model.entity.Post;
-import com.aurum.springbootinit.model.entity.User;
 import com.aurum.springbootinit.model.vo.PostVO;
 import com.aurum.springbootinit.service.PostService;
 import com.aurum.springbootinit.service.UserService;

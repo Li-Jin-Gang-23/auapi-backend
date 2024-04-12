@@ -1,9 +1,9 @@
 package com.aurum.springbootinit.service.impl;
 
+import com.aurum.auapicommon.model.entity.UserInterfaceInfo;
 import com.aurum.springbootinit.common.ErrorCode;
 import com.aurum.springbootinit.exception.BusinessException;
 import com.aurum.springbootinit.mapper.UserInterfaceInfoMapper;
-import com.aurum.springbootinit.model.entity.UserInterfaceInfo;
 import com.aurum.springbootinit.service.UserInterfaceInfoService;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

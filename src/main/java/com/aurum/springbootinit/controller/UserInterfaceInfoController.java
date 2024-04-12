@@ -1,5 +1,7 @@
 package com.aurum.springbootinit.controller;
 
+import com.aurum.auapicommon.model.entity.User;
+import com.aurum.auapicommon.model.entity.UserInterfaceInfo;
 import com.aurum.springbootinit.annotation.AuthCheck;
 import com.aurum.springbootinit.common.BaseResponse;
 import com.aurum.springbootinit.common.DeleteRequest;
@@ -12,8 +14,6 @@ import com.aurum.springbootinit.exception.ThrowUtils;
 import com.aurum.springbootinit.model.dto.userinterfaceinfo.UserInterfaceInfoAddRequest;
 import com.aurum.springbootinit.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
 import com.aurum.springbootinit.model.dto.userinterfaceinfo.UserInterfaceInfoUpdateRequest;
-import com.aurum.springbootinit.model.entity.User;
-import com.aurum.springbootinit.model.entity.UserInterfaceInfo;
 import com.aurum.springbootinit.service.UserInterfaceInfoService;
 import com.aurum.springbootinit.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -27,9 +27,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
- * 帖子接口
- */
+
 @RestController
 @RequestMapping("/userInterfaceInfo")
 @Slf4j

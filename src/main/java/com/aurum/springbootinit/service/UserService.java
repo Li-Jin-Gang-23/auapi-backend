@@ -1,18 +1,18 @@
 package com.aurum.springbootinit.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.aurum.auapicommon.model.entity.User;
 import com.aurum.springbootinit.model.dto.user.UserQueryRequest;
-import com.aurum.springbootinit.model.entity.User;
 import com.aurum.springbootinit.model.vo.LoginUserVO;
 import com.aurum.springbootinit.model.vo.UserVO;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.IService;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 用户服务
- *
  */
 public interface UserService extends IService<User> {
 
