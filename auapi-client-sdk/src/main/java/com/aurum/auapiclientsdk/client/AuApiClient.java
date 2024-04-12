@@ -22,7 +22,7 @@ import static com.aurum.auapiclientsdk.utils.SignUtils.genSign;
 
 public class AuApiClient {
 
-    private final String GATEWAY_HOST = "http://localhost:8123";
+    private final String GATEWAY_HOST = "http://localhost:8090";
 
     private String accessKey;
 
@@ -37,7 +37,7 @@ public class AuApiClient {
         // 可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        String result = HttpUtil.get(GATEWAY_HOST + "/api/name", paramMap);
+        String result = HttpUtil.get(GATEWAY_HOST + "/api/name/get", paramMap);
         System.out.println(result);
         return result;
     }
@@ -46,7 +46,7 @@ public class AuApiClient {
         // 可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        String result = HttpUtil.post(GATEWAY_HOST + "/api/name", paramMap);
+        String result = HttpUtil.post(GATEWAY_HOST + "/api/name/post", paramMap);
         System.out.println(result);
         return result;
     }
